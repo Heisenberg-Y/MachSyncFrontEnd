@@ -1,0 +1,22 @@
+<nz-table #basicTable [nzData]="listOfData">
+  <thead>
+  <tr>
+    <th>Configuration Name</th>
+    <th>Excel File Path</th>
+    <th>Data Sheet Number</th>
+    <th>Activated</th>
+    <th>Operation</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let data of basicTable.data">
+    <td>{{data.configurationName}}</td>
+    <td>{{data.filePath}}</td>
+    <td>{{data.dataSheetNum}}</td>
+    <td>
+      <nz-switch [(ngModel)]="data.activated" (ngModelChange)="switch(data, $event)"></nz-switch>
+    </td>
+    <td (click)="clickDelete(data)" style="cursor: pointer ;text-decoration: underline; color:blue">delete</td>
+  </tr>
+  </tbody>
+</nz-table>

@@ -1,0 +1,22 @@
+<nz-table #basicTable [nzData]="jobs">
+  <thead>
+  <tr>
+    <th>Job Id</th>
+    <th>Job Type</th>
+    <th>Configuration Name</th>
+    <th>Created Time</th>
+    <th>Job Status</th>
+    <th>Completed Time</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let data of basicTable.data">
+    <td>{{data.id}}</td>
+    <td>{{data.job_type}}</td>
+    <td>{{data.configuration.configurationName}}</td>
+    <td>{{data.created_time}}</td>
+    <td>{{data.status}}</td>
+    <td>{{data.completed_time}}</td>
+  </tr>
+  </tbody>
+</nz-table>

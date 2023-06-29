@@ -1,0 +1,6 @@
+<div>
+  <nz-divider nzText="Add File Watcher"></nz-divider>
+<app-watcher-input (submitForm)="onSubmit($event)"></app-watcher-input>
+  <nz-divider nzText="Defined File Watchers"></nz-divider>
+  <app-active-watcher [fileWatchers]="fileWatchers" ></app-active-watcher>
+</div>

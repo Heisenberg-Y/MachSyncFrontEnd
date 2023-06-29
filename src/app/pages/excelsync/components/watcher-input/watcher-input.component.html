@@ -1,0 +1,25 @@
+<form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()" >
+  <nz-form-item>
+    <nz-form-label [nzSm]="11" [nzXs]="24" nzRequired nzFor="configuration name">Configuration Name</nz-form-label>
+    <nz-form-control [nzSm]="11" [nzXs]="24" nzErrorTip="The input is not valid Excel File Path!">
+      <input nz-input formControlName="configurationName" id="configurationName"/>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label [nzSm]="11" [nzXs]="24" nzRequired nzFor="excel file path">Excel File Path</nz-form-label>
+    <nz-form-control [nzSm]="11" [nzXs]="24" nzErrorTip="The input is not valid Excel File Path!">
+      <input nz-input formControlName="filePath" id="filePath"/>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label [nzSm]="11" [nzXs]="24" nzRequired nzFor="data sheet">Data Sheet Number</nz-form-label>
+    <nz-form-control [nzSm]="11" [nzXs]="24" nzErrorTip="Should have a number!">
+      <nz-input-number nz-input formControlName="dataSheetNum" id="dataSheet"/>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item  nz-row class="register-area">
+    <nz-form-control [nzSm]="10" [nzXs]="24" [nzOffset]="11" >
+      <button nz-button nzType="primary"  [disabled]="!validateForm.valid" >Submit</button>
+    </nz-form-control>
+  </nz-form-item>
+</form>
