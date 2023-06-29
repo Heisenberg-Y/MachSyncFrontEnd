@@ -1,4 +1,4 @@
-# MachinationsSync
+# MachSync front end
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.7.
 
@@ -18,10 +18,28 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+## Project Description
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+This is the front end part of mach sync project, which is written in Angular.
 
-## Further help
+## Project Goal
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Provide a UI interface to submit and monitor the job status of machinations sync project.
+
+## Project logic
+
+Whenever a user submit a configuration in the front end, it will post the information to the backend,
+the backend will generate a job id and store the configuration in the database. Then the backend will schedule to check 
+the file change by certain time of interval, if it find any changes it will generate a job and front end will pull the updated information
+
+## Project Structure
+
+There are two `pages`, one is configuration pages, which is used to define the configuration of the machinations sync project, like the excel file path
+One is the job page, to watch the job status.
+
+## How to combine with the backend to deploy
+
+run `ng build` and put all the files or dir under dist folder to the backend static folder, then you can access the front end by `http://localhost:8080/`
+
+A better way is to use script to package it together, which is not implemented yet, because of time limitation
+
